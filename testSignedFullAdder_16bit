@@ -20,8 +20,7 @@ NAMED_VALUE_LISTS
   lowNegative SIGNED(16) [ -1, -2, -14512, -2^14 + 1 ]
   allPositive SIGNED(16) [ lowPositive,  2^15 - 2, 2^15 - 1 ]
   allNegative SIGNED(16) [ lowNegative,  -2^15 + 1, -2^15 ]
-  myPositive SIGNED(16) [2^0, 2^1, 2^3, 2^4, 2^5, 2^6, 2^7, 2^8, 2^9, 2^10, 2^11, 2^12, 2^13, 2^14]
-  myNegative SIGNED(16) [-2^0, -2^1, -2^2, -2^3, -2^4, -2^5, -2^6, -2^7, -2^8, -2^9, -2^10, -2^11, -2^12, -2^13, -2^14]
+
 ###########################
 #
 # Positive and no overflow
@@ -91,26 +90,4 @@ BEGIN negative_overflow
  OUTPUTS   
     Overflow REQUIRE  
 
-BEGIN negatives
-  INPUTS
-    InputA SIGNED(16) myNegative
-    InputB SIGNED(16) myNegative
-    CarryIn [0, 1]
- OUTPUTS
-    Overflow REQUIRE
 
-BEGIN positives
-  INPUTS
-    InputA SIGNED(16) myPositive
-    InputB SIGNED(16) myPositive
-    CarryIn [0, 1]
- OUTPUTS
-    Overflow REQUIRE
-
-BEGIN bothPosAndNeg
-  INPUTS
-    InputA SIGNED(16) myPositive
-    InputB SIGNED(16) myNegative
-    CarryIn[0, 1]
-  OUTPUTS
-     Overflow REQUIRE

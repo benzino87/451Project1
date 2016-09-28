@@ -67,5 +67,14 @@ BEGIN less_than_unsigned
     Output [0, 0, 1]
     Overflow 0
 
+BEGIN less_than_signed
+  INPUTS
+   InputA 32768
+   InputB [0, -1, -32768]
+   Op 7
+  OUTPUTS
+   Output [0, 0, 0]
+   Overflow 0
 
 # last line
+#
